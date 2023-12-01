@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            padding: 0.5rem 1rem;
+        }
+        .navbar .mainText {
+            margin-left: auto;
+            
+            width: fit-content;
+        }
+        .navbar p {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 5px;
+        }
+        .mainTitle {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            color: #1d4ed8;
+            margin: 1rem 0;
+        }
+        .yearFilter,.fileFilter,.typeFilter{
+            padding: 0 2rem;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+        }
+        .yearFilter label,.fileFilter label {
+            margin-left: 10px;
+        }
+        .filters {
+            display: flex;
+        }
+        .typeFilter {
+            gap: 10px;
+        }
+        table {
+            width: 95%;
+            text-align: center;
+            padding: 0 20px;
+            margin: 2rem auto;
+        }
+        table,th,td {
+            
+            border:1px solid black;
+            border-collapse: collapse;
+        }
+        table thead {
+            background-color: #525252;
+        }
+        table thead th {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="mainText">
+            <p>مديرية امن الفيوم</p>
+            <p>مركز الرئاسة</p>
+            <p>مكتب المتابعة</p>
+        </div>
+    </nav>
+
+    <main>
+        <p class="mainTitle">نظام متابعة المكاتبات لمديرية امن القاهرة</p>
+        <div class="filters">
+            <div class="yearFilter">
+                <label for="yearSelector">اختر السنة</label>
+                <select name="year" id="yearSelector">
+                    <option value="">2023</option>
+                    <option value="">2024</option>
+                    <option value="">2025</option>
+                    <option value="">2026</option>
+                </select>
+            </div>
+            <div class="fileFilter">
+                <label for="yearSelector">اختر الملف</label>
+                <select name="year" id="yearSelector">
+                    <option value="">حقوق الانسان</option>
+                    <option value="">مدة ميعاد</option>
+                    <option value="">اعمال لجان</option>
+                    <option value="">مباحث داخلى</option>
+                    <option value="">قطاع الاعلام والعلاقات</option>
+                </select>
+            </div>
+            <div class="typeFilter">
+                <div>
+                    <label for="type1">مطلوب الرد</label>
+                    <input type="radio" name="type" id="type1">
+                </div>
+                <div>
+                    <label for="type2">غير مطلوب الرد</label>
+                    <input type="radio" name="type" id="type2">
+                </div>
+                <div>
+                    <label for="type3">الجميع</label>
+                    <input type="radio" name="type" id="type3" checked>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>رقم</th>
+                    <th>رقم الصادر</th>
+                    <th>التاريخ</th>
+                    <th>رقم الوارد</th>
+                    <th>جهة الطلب</th>
+                    <th>الموضوع</th>
+                    <th>التاشيرة</th>
+                    <th>التسديد</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1234/أ/ح</td>
+                    <td>29/10/2023</td>
+                    <td>12345</td>
+                    <td>حقوق الانسان</td>
+                    <td>شكوي المواطن / عبدالحميد احمد عبدالحميد</td>
+                    <td>
+                        <p>مباحث</p>
+                        <p>مرور</p>
+                    </td>
+                    <td>----</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>4567/أ/ح</td>
+                    <td>29/10/2023</td>
+                    <td>45678</td>
+                    <td>حقوق الانسان</td>
+                    <td>شكوي المواطن / عبدالحميد احمد عبدالحميد</td>
+                    <td>
+                        <p>مباحث</p>
+                    </td>
+                    <td>
+                        <p>14568/2</p>
+                        <p>1/12/2023</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>7891/أ/ح</td>
+                    <td>29/10/2023</td>
+                    <td>78945</td>
+                    <td>حقوق الانسان</td>
+                    <td>شكوي المواطن / عبدالحميد احمد عبدالحميد</td>
+                    <td>
+                        <p>ق الشرق</p>
+                    </td>
+                    <td>----</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>
+                        <p>
+                            6060/أ/ح
+                        </p>
+                        <p>
+                            9876/أ/ح
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            29/10/2023
+                        </p>
+                        <p>
+                            1/12/2023
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            15642
+                        </p>
+                        <p>
+                            45632
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            حقوق الانسان
+                        </p>
+                        <p>
+                            ق الغرب
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            شكوي المواطن / عبدالحميد احمد عبدالحميد
+                            شكوي المواطن / عبدالحميد احمد عبدالحميد
+                            شكوي المواطن / عبدالحميد احمد عبدالحميد
+                            شكوي المواطن / عبدالحميد احمد عبدالحميد
+                        </p>
+                        <p>
+                            رد الغرب
+                        </p>
+                    </td>
+                    <td>
+                        <p>ق الغرب</p>
+                        <p>المرور</p>
+                        <p>المرافق</p>
+                    </td>
+                    <td>----</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+</body>
+</html>
