@@ -25,25 +25,48 @@
 1- getPapers  (post)
 	required data in request {
 	1-fileName:string ex:حقوق الانسان
-	2-category:string ex "مباحث" || "all"
-	3-type:"opened" || "closed" || "all"
-	4-year:string  ex : 2023
+	2-type:"opened" || "closed" || "all"
+	3-year:string  ex : 2023
 	}
 	response form : [
 	{
-	id:number 
+	category:string  ex:"مباحث"
 	content:[
 		{
-			1- outgoingNum:string (رقم الصادر) ex:1547/أ/ب
-			2- date:string	ex:15/11/2023
-			3- incomingNum:string (رقم الوارد) ex:1245/2
-			4- senderName:string (اسم الجهة الي باعتة المكاتبة زي مثلا حقوق الانسان) ex:حقوق الانسان
-			5- subject:string (الموضوع)	ex:شكوى المواطن فلان الفلانى
-			6- receiver:string[] (الجهة الي هتستلم المكاتبة ومكن يبقوا اكتر من جهة) ex:["مباحث"]
-			7- archiveNumber?(not required):{number:string,date:string} (رقم الارشيف في حالة ان المكاتبة مقفولة وبيسموها غير مطلوب الرد والي مفتوحة لسا بيسموها مطلوب الرد) ex:{number:"1234/5",date:"1/12/2023"}
+			1-id:number
+			paper:[
+				{
+				1- outgoingNum:string (رقم الصادر) ex:1547/أ/ب
+				2- date:string	ex:15/11/2023
+				3- incomingNum:string (رقم الوارد) ex:1245/2
+				4- senderName:string (اسم الجهة الي باعتة المكاتبة زي مثلا حقوق الانسان) ex:حقوق الانسان
+				5- subject:string (الموضوع)	ex:شكوى المواطن فلان الفلانى
+				6- receiver:string[] (الجهة الي هتستلم المكاتبة ومكن يبقوا اكتر من جهة) ex:["مباحث"]
+				7- archiveNumber?(not required):{number:string,date:string} (رقم الارشيف في حالة ان المكاتبة مقفولة وبيسموها غير مطلوب الرد والي مفتوحة لسا بيسموها مطلوب الرد) ex:{number:"1234/5",date:"1/12/2023"}
+				}
+			]		
+		}
+		]
+	},
+	{
+	category:string  ex:"قطاع الشمال"
+	content:[
+		{
+			1-id:number
+			paper:[
+				{
+				1- outgoingNum:string (رقم الصادر) ex:1547/أ/ب
+				2- date:string	ex:15/11/2023
+				3- incomingNum:string (رقم الوارد) ex:1245/2
+				4- senderName:string (اسم الجهة الي باعتة المكاتبة زي مثلا حقوق الانسان) ex:حقوق الانسان
+				5- subject:string (الموضوع)	ex:شكوى المواطن فلان الفلانى
+				6- receiver:string[] (الجهة الي هتستلم المكاتبة ومكن يبقوا اكتر من جهة) ex:["مباحث"]
+				7- archiveNumber?(not required):{number:string,date:string} (رقم الارشيف في حالة ان المكاتبة مقفولة وبيسموها غير مطلوب الرد والي مفتوحة لسا بيسموها مطلوب الرد) ex:{number:"1234/5",date:"1/12/2023"}
+				}
+			]		
 		}
 		]
 	}
-	]
+]
 
    
