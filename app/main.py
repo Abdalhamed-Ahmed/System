@@ -1,10 +1,15 @@
 import os
+
+# from pathlib import Path
 from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 
-
+# BASE_DIR = Path(__file__).resolve().parent
 basedir = os.path.abspath(os.path.dirname(__file__))
+os.chdir(basedir)
+# print(BASE_DIR)
+print(basedir)
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(
@@ -116,4 +121,4 @@ def create_paper():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
