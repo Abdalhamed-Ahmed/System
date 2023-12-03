@@ -1,0 +1,95 @@
+{% extends 'base.html' %} {% block title %} المكاتبات{% endblock %} {% block
+contentbody %}
+<main>
+    <p class="mainTitle">نظام متابعة المكاتبات لمديرية امن القاهرة</p>
+    <div style="text-align: center; padding: 20px; font-size: 20px">
+        <a href="/create/"
+            ><button style="font-size: 20px">اضافة مكاتبة</button></a
+        >
+    </div>
+    <form class="filters">
+        <div class="yearFilter">
+            <label for="yearSelector">اختر السنة</label>
+            <select id="yearSelector">
+                <option value="">2023</option>
+                <option value="">2024</option>
+                <option value="">2025</option>
+                <option value="">2026</option>
+            </select>
+        </div>
+        <div class="fileFilter">
+            <label for="fileNameSelector">اختر الملف</label>
+            <select name="fileName" id="fileNameSelector">
+                <option value=""></option>
+                {% for fileName in fileNames %}
+                <option value="{{fileName}}">{{fileName}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="typeFilter">
+            <div>
+                <label for="type1">مطلوب الرد</label>
+                <input
+                    type="radio"
+                    value="oij"
+                    name="archiveNumber"
+                    id="type1"
+                />
+            </div>
+            <div>
+                <label for="type2">غير مطلوب الرد</label>
+                <input type="radio" name="archiveNumber" id="type2" />
+            </div>
+            <div>
+                <label for="type3">الجميع</label>
+                <input
+                    type="radio"
+                    name="archiveNumber"
+                    value=""
+                    id="type3"
+                    checked
+                />
+            </div>
+        </div>
+        <div class="fileFilter">
+            <input style="font-size: 18px" type="submit" value="بحث" />
+        </div>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>رقم</th>
+                <th>رقم الصادر</th>
+                <th>التاريخ</th>
+                <th>رقم الوارد</th>
+                <th>جهة الطلب</th>
+                <th>الموضوع</th>
+                <th>التاشيرة</th>
+                <th>التسديد</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in categories %}
+            <tr>
+                <td colspan="8" class="category">{{category}}</td>
+            </tr>
+
+            {% for paper in papers %} {% if paper.category == category %}
+            <tr>
+                <td>{{paper.id}}</td>
+                <td>{{paper.outgoingNum}}</td>
+                <td>{{paper.date}}</td>
+                <td>{{paper.incomingNum}}</td>
+                <td>{{paper.senderName}}</td>
+                <td>{{paper.subject}}</td>
+                <td>
+                    <p>{{paper.receiver}}</p>
+                </td>
+                <td>{{paper.archiveNumber}}</td>
+            </tr>
+            {% endif %} {% endfor %} {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}

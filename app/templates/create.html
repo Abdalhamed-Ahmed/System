@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block title %} اضافة مكاتبة{% endblock %} {% block
+contentbody %}
+<main>
+    <p class="mainTitle">اضافة مكاتبة مديرية امن القاهرة</p>
+    <form
+        action="{{ url_for('create_paper') }}"
+        style="margin: auto; width: fit-content; display: block"
+        method="POST"
+    >
+        <label for="fileName">اسم الملف:</label>
+        <select id="fileName" name="fileName" required>
+            <option value=""></option>
+            {% for fileName in fileNames %}
+            <option value="{{fileName}}">{{fileName}}</option>
+            {% endfor %}</select
+        ><br /><br />
+        <label for="category">اسم القسم:</label>
+        <select id="category" name="category">
+            <option value=""></option>
+            {% for category in categories %}
+            <option value="{{category}}">{{category}}</option>
+            {% endfor %}
+        </select>
+        <br /><br />
+
+        <label for="outgoingNum">رقم الصادر:</label>
+        <input type="text" id="outgoingNum" name="outgoingNum" /><br /><br />
+
+        <label for="senderName">جهة الطلب:</label>
+        <input type="text" id="senderName" name="senderName" /><br /><br />
+
+        <label for="incomingNum">رقم الوارد:</label>
+        <input type="text" id="incomingNum" name="incomingNum" /><br /><br />
+
+        <label for="subject">الموضوع:</label>
+        <textarea id="subject" name="subject"></textarea><br /><br />
+
+        <label for="receiver">التأشيرة:</label>
+        <input type="text" id="receiver" name="receiver" /><br /><br />
+
+        <label for="archiveNumber">رقم الأرشيف:</label>
+        <input
+            type="text"
+            id="archiveNumber"
+            name="archiveNumber"
+        /><br /><br />
+
+        <input type="submit" value="تحميل" />
+    </form>
+</main>
+{% endblock %}

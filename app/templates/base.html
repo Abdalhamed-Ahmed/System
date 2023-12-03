@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %} {% endblock %}</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .navbar {
+                padding: 0.5rem 1rem;
+            }
+            .navbar .mainText {
+                margin-left: auto;
+
+                width: fit-content;
+            }
+            .navbar p {
+                font-size: 24px;
+                font-weight: bold;
+                margin: 5px;
+            }
+            .mainTitle {
+                text-align: center;
+                font-size: 40px;
+                font-weight: bold;
+                color: #1d4ed8;
+                margin: 1rem 0;
+            }
+            .yearFilter,
+            .fileFilter,
+            .typeFilter {
+                padding: 0 2rem;
+                font-size: 18px;
+                font-weight: bold;
+                display: flex;
+                justify-items: center;
+                align-items: center;
+            }
+            .yearFilter label,
+            .fileFilter label {
+                margin-left: 10px;
+            }
+            .filters {
+                display: flex;
+            }
+            .typeFilter {
+                gap: 10px;
+            }
+            table {
+                width: 95%;
+                text-align: center;
+                padding: 0 20px;
+                margin: 2rem auto;
+            }
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            table thead {
+                background-color: #525252;
+            }
+            table thead th {
+                padding: 10px;
+            }
+            .category {
+                padding: 10px;
+                font-size: 18px;
+                background-color: #172554;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="mainText">
+                <p>مديرية امن الفيوم</p>
+                <p>مركز الرئاسة</p>
+                <p>مكتب المتابعة</p>
+            </div>
+        </nav>
+        {% block contentbody %} {% endblock %}
+    </body>
+</html>
